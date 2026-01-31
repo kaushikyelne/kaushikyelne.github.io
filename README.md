@@ -4,7 +4,7 @@ A professional portfolio showcasing 4+ years of experience in building high-scal
 
 ## Preview
 
-![Portfolio Preview](assets/portfolio_preview.png)
+![Portfolio Preview](assets/preview.png)
 
 ## Key Projects 🚀
 
