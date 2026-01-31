@@ -159,7 +159,7 @@ function initThemeToggle() {
 
     // Check for saved theme or system preference
     const savedTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const systemTheme = 'light';
     const currentTheme = savedTheme || systemTheme;
 
     // Apply initial theme
@@ -178,13 +178,15 @@ function initThemeToggle() {
         }, 200);
     });
 
-    // Listen for system theme changes
+    // Listen for system theme changes - Disabled to enforce light mode default
+    /*
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
         if (!localStorage.getItem('theme')) {
             const newTheme = e.matches ? 'dark' : 'light';
             html.setAttribute('data-theme', newTheme);
         }
     });
+    */
 }
 
 /* =============================================

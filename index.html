@@ -7,7 +7,7 @@
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
-            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const systemTheme = 'light';
             document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
         })();
     </script>
@@ -493,7 +493,8 @@
 
                 <div class="project-card">
                     <div class="project-visual">
-                        <img src="assets/projects/SIH.jpg" alt="Smart India Hackathon 2019" class="project-image">
+                        <img src="assets/projects/SIH.jpg" alt="Smart India Hackathon 2019" class="project-image"
+                            style="width: 50%; height: auto; object-fit: contain;">
                     </div>
                     <div class="project-content">
                         <span class="project-tag">Hackathon Winner</span>
