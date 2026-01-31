@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
+        })();
+    </script>
+    <title>Kaushik Yelne | Software Engineer - Backend</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Software Engineer with 4+ years of experience in Backend Engineering. Expertise in Java Spring Boot, Microservices, Kafka, and Cloud technologies.">
+    <meta name="keywords"
+        content="Software Engineer, Backend Developer, Java Developer, Spring Boot, Microservices, Kafka, Distributed Systems">
+    <meta name="author" content="Kaushik Yelne">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kaushik Yelne | Software Engineer - Backend">
+    <meta property="og:description"
+        content="Building scalable backend systems. 4+ years of experience in Microservices and Distributed Architectures.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kaushikyelne.github.io">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Caveat:wght@400;600;700&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="#" class="nav-logo">Kaushik Yelne</a>
+        <div class="nav-links">
+            <a href="#work" class="nav-link">
+                <i class="ph ph-briefcase nav-icon"></i>
+                <span>Work</span>
+            </a>
+            <a href="#about-skills" class="nav-link">
+                <i class="ph ph-user nav-icon"></i>
+                <span>About</span>
+            </a>
+            <a href="#projects" class="nav-link">
+                <i class="ph ph-folder-open nav-icon"></i>
+                <span>Projects</span>
+            </a>
+            <a href="mailto:kaushik.s.yelne@gmail.com" class="nav-cta">
+                <i class="ph ph-envelope"></i>
+                Say Hi
+            </a>
+        </div>
+    </nav>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="ph ph-moon"></i>
+        <i class="ph ph-sun"></i>
+    </button>
+
+    <!-- Hero Section - Bento Grid -->
+    <section id="hero" class="hero-section">
+        <div class="bento-grid">
+            <!-- Column 1: Title (row 1) -->
+            <div class="bento-card bento-title">
+                <div class="title-corner-icon">
+                    <i class="ph ph-rocket-launch"></i>
+                </div>
+                <h1>Engineer,<br>Builder,<br><span class="accent">Problem Solver</span></h1>
+            </div>
+
+            <!-- Column 2: Photo (row 1) -->
+            <div class="bento-card bento-photo">
+                <!-- <div class="photo-placeholder">
+                    <i class="ph ph-user"></i>
+                </div> -->
+                <img src="assets/coding.gif" alt="Kaushik Yelne" class="profile-photo">
+            </div>
+
+            <!-- Column 3: Watch List (rows 1-2) -->
+            <div class="bento-card bento-list">
+                <span class="list-label">Watch, Read, Ponder</span>
+                <div class="list-scroll">
+                    <a href="https://tv.apple.com/in/show/severance/umc.cmc.1srk2goyh2q2zdxcx605w8vtx" target="_blank"
+                        class="list-item">
+                        <i class="ph ph-monitor-play"></i>
+                        <div class="list-item-content">
+                            <span class="item-title">Severance</span>
+                            <span class="item-sub">Apple TV</span>
+                        </div>
+                    </a>
+                    <a href="https://tv.apple.com/in/movie/the-social-network/umc.cmc.36jj4rzu3eh9jk7uhicvr4vhb"
+                        target="_blank" class="list-item">
+                        <i class="ph ph-film-slate"></i>
+                        <div class="list-item-content">
+                            <span class="item-title">The Social Network</span>
+                            <span class="item-sub">Movie</span>
+                        </div>
+                    </a>
+                    <a href="https://blog.bytebytego.com/api/v1/file/d0601f5c-3308-430c-90d9-7f1c723b6ddd.pdf"
+                        target="_blank" class="list-item">
+                        <i class="ph ph-book-open"></i>
+                        <div class="list-item-content">
+                            <span class="item-title">System Design Interview</span>
+                            <span class="item-sub">Alex Xu</span>
+                        </div>
+                    </a>
+                    <a href="https://lexfridman.com/podcast/" target="_blank" class="list-item">
+                        <i class="ph ph-microphone-stage"></i>
+                        <div class="list-item-content">
+                            <span class="item-title">Lex Fridman Podcast</span>
+                            <span class="item-sub">Tech & Philosophy</span>
+                        </div>
+                    </a>
+                    <a href="https://store.steampowered.com/app/1245620/ELDEN_RING/" target="_blank" class="list-item">
+                        <i class="ph ph-game-controller"></i>
+                        <div class="list-item-content">
+                            <span class="item-title">Elden Ring</span>
+                            <span class="item-sub">Video Game</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 1: Bio (rows 2-4) -->
+            <div class="bento-card bento-bio">
+                <p class="bio-text">
+                    Hey! I'm <strong class="name-highlight">Kaushik</strong>, a Software Engineer based in
+                    India.
+                    I specialize in <strong class="name-highlight">Backend Engineering</strong>, building scalable
+                    microservices and distributed systems.
+                    I love solving complex problems and optimizing high-performance applications.
+                </p>
+            </div>
+
+            <!-- Column 2: Previous (row 2) -->
+            <div class="bento-card bento-previous">
+                <div class="currently-icon previous-icon">
+                    <i class="ph-fill ph-briefcase"></i>
+                </div>
+                <div class="currently-content">
+                    <span class="currently-label">Currently at</span>
+                    <p class="currently-text">Dubai Ports • Group SDE-1</p>
+                </div>
+            </div>
+
+            <!-- Column 2: Row 3 Stack (Currently + Say Hi) -->
+            <div class="bento-row3-stack">
+                <div class="bento-card bento-currently">
+                    <div class="currently-icon">
+                        <i class="ph-fill ph-lightning"></i>
+                    </div>
+                    <div class="currently-content">
+                        <span class="currently-label">Building</span>
+                        <p class="currently-text">
+                            <span class="fitlane-logo-shadow">
+                                <a href="#" target="_blank" class="fitlane-logo-stroke fitlane-logo-text">MoneyLane</a>
+                                <br>
+                                <a href="https://elevenxstudios.com" target="_blank"
+                                    class="butterchicken-link">ElevenXStudios</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="bento-card bento-cta">
+                    <a href="mailto:kaushik.s.yelne@gmail.com" class="say-hi-btn">
+                        <span>Say Hi</span>
+                        <i class="ph ph-arrow-up-right say-hi-arrow"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 3: Social 2x2 + Ring (row 3) -->
+            <div class="bento-social-row">
+                <div class="bento-social-grid">
+                    <a href="https://www.linkedin.com/in/kaushikyelne" target="_blank"
+                        class="social-square social-linkedin">
+                        <i class="ph ph-linkedin-logo"></i>
+                    </a>
+                    <a href="https://github.com/kaushikyelne" target="_blank" class="social-square social-github">
+                        <i class="ph ph-github-logo"></i>
+                    </a>
+                    <!-- <a href="#" target="_blank" class="social-square social-x">
+                        <i class="ph ph-x-logo"></i>
+                    </a> -->
+                    <!-- <a href="#" target="_blank" class="social-square social-medium">
+                        <i class="ph ph-medium-logo"></i>
+                    </a> -->
+                </div>
+                <div class="scroll-indicator" id="scrollIndicator">
+                    <svg viewBox="0 0 100 100">
+                        <path id="textPath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none" />
+                        <text>
+                            <textPath href="#textPath">
+                                SCROLL DOWN • CHECK OUT MY WORK •
+                            </textPath>
+                        </text>
+                    </svg>
+                    <i class="ph ph-arrow-down scroll-arrow"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="work-section">
+        <h2 class="section-title">Work Experience</h2>
+
+        <div class="timeline-container">
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+
+            <!-- Dubai Ports, DP World -->
+            <div class="timeline-item" data-year="2023-Present">
+                <div class="timeline-year">
+                    <span class="year-text">Present</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="company-info">
+                            <img src="assets/companies/dpw.png" alt="DP World" class="company-logo">
+                            <h3 class="company-name">Dubai Ports, DP World</h3>
+                        </div>
+                        <span class="duration">March 2023 - Present</span>
+                    </div>
+                    <p class="role">Group SDE-1 Backend</p>
+                    <ul class="achievements">
+                        <li>Engineered <strong>9+ microservices</strong> across customs, taxation, billing, and shipping
+                            using Java Spring Boot, Kafka, and PostgreSQL.</li>
+                        <li>Automated Customs Filing reducing filing time by 60% and manual effort by
+                            <strong>80%+</strong>.
+                        </li>
+                        <li>Replaced legacy schedulers with Kafka-based real-time updates, cutting latency by
+                            <strong>90%</strong>.
+                        </li>
+                        <li>Built high-performance Taxation Service achieving <strong>99.9% accuracy</strong> across 50+
+                            jurisdictions.</li>
+                        <li>Led Billing Module Migration reducing downtime by <strong>70%</strong>.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Java Spring Boot</span>
+                        <span class="tech-tag">Kafka</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Microservices</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Airtel x Labs -->
+            <div class="timeline-item" data-year="2022-2023">
+                <div class="timeline-year">
+                    <span class="year-text">2022</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="company-info">
+                            <img src="assets/companies/airtel.png" alt="Airtel" class="company-logo">
+                            <h3 class="company-name">Airtel x Labs</h3>
+                        </div>
+                        <span class="duration">April 2022 - March 2023</span>
+                    </div>
+                    <p class="role">Software Engineer - Backend</p>
+                    <ul class="achievements">
+                        <li>Developed backend services for Airtel Work platform tracking <strong>5,000+ field
+                                engineers</strong>.</li>
+                        <li>Designed REST APIs and integrated MongoDB, reducing ticket resolution time by
+                            <strong>30%</strong>.
+                        </li>
+                        <li>Enhanced scalability and concurrency handling for millions of enterprise customers.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capgemini -->
+            <div class="timeline-item" data-year="2021-2022">
+                <div class="timeline-year">
+                    <span class="year-text">2021</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="company-info">
+                            <img src="assets/companies/capgemini.png" alt="Capgemini" class="company-logo"
+                                style="padding: 12px;">
+                            <h3 class="company-name">Capgemini</h3>
+                        </div>
+                        <span class="duration">June 2021 - April 2022</span>
+                    </div>
+                    <p class="role">Software Engineer / Senior Analyst</p>
+                    <ul class="achievements">
+                        <li>Managed Cloud Infrastructure Services (Linux, Windows Admin, Azure, AWS).</li>
+                        <li>Utilized Python and PowerShell for enterprise automation.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Linux/Windows</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About & Skills Combined Section -->
+    <section id="about-skills" class="about-skills-section">
+        <div class="about-skills-container">
+            <h2 class="section-title">
+                About Me & My Tech Arsenal
+            </h2>
+
+            <div class="content-grid">
+                <!-- About Content -->
+                <div class="about-column">
+                    <div class="about-card">
+                        <h3 class="card-title">
+                            <i class="ph ph-user"></i>
+                            Who Am I
+                        </h3>
+                        <p class="about-text">
+                            With <strong>4+ years</strong> of experience in Backend Engineering,
+                            I specialize in building distributed systems using <strong>Java Spring Boot, Kafka, and
+                                Microservices</strong>.
+                        </p>
+                        <p class="about-text">
+                            From automating customs filing for Dubai Ports to building workforce tracking for Airtel,
+                            I thrive on solving complex scalability challenges and optimizing system performance.
+                        </p>
+
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <i class="ph ph-calendar-check"></i>
+                                <span class="stat-number">4+</span>
+                                <span class="stat-text">Years</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="ph ph-microcircuit-chip"></i>
+                                <span class="stat-number">9+</span>
+                                <span class="stat-text">Microservices</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="ph ph-globe"></i>
+                                <span class="stat-number">50+</span>
+                                <span class="stat-text">Jurisdictions</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="write-card">
+                        <h3 class="card-title">
+                            <i class="ph ph-trophy"></i>
+                            Achievements
+                        </h3>
+                        <div class="achievement-item">
+                            <h4 class="achievement-title">Smart India Hackathon 2019 Winner</h4>
+                            <p class="achievement-desc">
+                                First prize for solving a problem statement under the Ministry of Agriculture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Content -->
+                <div class="skills-column">
+                    <div class="skills-card">
+                        <h3 class="card-title">
+                            <i class="ph ph-rocket-launch"></i>
+                            Technical Arsenal
+                        </h3>
+                        <div class="skills-grid">
+                            <div class="skill-item skill-mobile">
+                                <div class="skill-icon">
+                                    <i class="ph ph-code"></i>
+                                </div>
+                                <div class="skill-content">
+                                    <h4>Languages</h4>
+                                    <p>Java/Core Java, C++, Python, NodeJs, SQL</p>
+                                    <div class="skill-badges">
+                                        <span class="badge">Java</span>
+                                        <span class="badge">Python</span>
+                                        <span class="badge">SQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item skill-languages">
+                                <div class="skill-icon">
+                                    <i class="ph ph-stack"></i>
+                                </div>
+                                <div class="skill-content">
+                                    <h4>Frameworks & Tools</h4>
+                                    <p>Spring Boot, Apache Kafka, Git, REST APIs</p>
+                                    <div class="skill-badges">
+                                        <span class="badge">Spring Boot</span>
+                                        <span class="badge">Kafka</span>
+                                        <span class="badge">Git</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item skill-cloud">
+                                <div class="skill-icon">
+                                    <i class="ph ph-cloud"></i>
+                                </div>
+                                <div class="skill-content">
+                                    <h4>Cloud & Infrastructure</h4>
+                                    <p>AWS, Azure, Google Cloud Platform, Linux, Windows Admin</p>
+                                    <div class="skill-badges">
+                                        <span class="badge">AWS</span>
+                                        <span class="badge">Azure</span>
+                                        <span class="badge">Linux</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item skill-backend">
+                                <div class="skill-icon">
+                                    <i class="ph ph-database"></i>
+                                </div>
+                                <div class="skill-content">
+                                    <h4>Databases & Concepts</h4>
+                                    <p>PostgreSQL, MongoDB, Microservices, Data Structures</p>
+                                    <div class="skill-badges">
+                                        <span class="badge">PostgreSQL</span>
+                                        <span class="badge">MongoDB</span>
+                                        <span class="badge">Microservices</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="assets/projects/CR.png" alt="Cargoes Runner" class="project-image"
+                            style="width: 50%; height: auto; object-fit: contain;">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Logistics Tech</span>
+                        <h3><a href="#" target="_blank">Cargoes Runner | DP World</a></h3>
+                        <p>Flagship global trade platform powering customs filing and billing across <strong>50+
+                                jurisdictions</strong>. Architected data flows with Kafka and PostgreSQL.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java Spring Boot</span>
+                            <span class="tech-tag">Kafka</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="assets/companies/airtel.png" alt="Airtel Work" class="project-image"
+                            style="width: 50%; height: auto; object-fit: contain;">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Enterprise</span>
+                        <h3><a href="#" target="_blank">Airtel Work</a></h3>
+                        <p>Enterprise field-service management system. Developed backend modules for task orchestration
+                            and workforce tracking.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="assets/projects/SIH.jpg" alt="Smart India Hackathon 2019" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Hackathon Winner</span>
+                        <h3><a href="#" target="_blank">Smart India Hackathon 2019</a></h3>
+                        <p>First prize winner for solving a problem statement under the Ministry of Agriculture. Built a
+                            solution for agricultural efficiency.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Innovation</span>
+                            <span class="tech-tag">Problem Solving</span>
+                            <span class="tech-tag">Team Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="contact-title">Let's Build Something Together</h2>
+            <p class="contact-subtitle">I'm always open to discussing new opportunities and interesting projects.</p>
+            <a href="mailto:kaushik.s.yelne@gmail.com" class="contact-cta">
+                Say Hi <i class="ph ph-arrow-up-right"></i>
+            </a>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/kaushikyelne" target="_blank">LinkedIn</a>
+                <span class="link-divider">•</span>
+                <a href="https://github.com/kaushikyelne" target="_blank">GitHub</a>
+                <!-- <span class="link-divider">•</span>
+                <a href="#" target="_blank">Medium</a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-quote">
+                <i class="ph ph-code"></i>
+                <span class="quote-text">"Code is poetry written in logic"</span>
+                <i class="ph ph-code"></i>
+            </p>
+
+            <div class="song-marquee">
+                <div class="marquee-content">
+                    <a href="https://music.apple.com/in/album/starboy-feat-daft-punk/1440870373?i=1440870375"
+                        target="_blank" class="song-item"><i class="ph ph-music-notes-simple"></i> Starboy - The
+                        Weeknd</a>
+                    <a href="https://music.apple.com/in/album/levitating/1538003494?i=1538003843" target="_blank"
+                        class="song-item"><i class="ph ph-music-notes"></i> Levitating - Dua Lipa</a>
+                    <a href="https://music.apple.com/in/album/heat-waves/1508562310?i=1508562516" target="_blank"
+                        class="song-item"><i class="ph ph-music-notes-simple"></i> Heat Waves - Glass Animals</a>
+                    <a href="https://music.apple.com/in/album/blinding-lights/1499385848?i=1499386265" target="_blank"
+                        class="song-item"><i class="ph ph-music-notes"></i> Blinding Lights - The Weeknd</a>
+                    <a href="https://music.apple.com/in/album/end-of-beginning/1632447652?i=1632448108" target="_blank"
+                        class="song-item"><i class="ph ph-music-notes-simple"></i> End Of Beginning - Djo</a>
+                    <a href="https://music.apple.com/in/album/all-the-stars/1440906927?i=1440906939" target="_blank"
+                        class="song-item"><i class="ph ph-music-notes"></i> All The Stars - Kendrick Lamar, SZA</a>
+                </div>
+            </div>
+
+            <div class="footer-fun">
+                <p class="footer-fact">
+                    <i class="ph ph-sparkle"></i>
+                    <span> Fun fact: This portfolio was built while listening to <strong>above mentioned songs</strong>
+                        and drinking way too much coffee</span>
+                </p>
+            </div>
+            <p class="copyright">© 2026 <strong> Kaushik Yelne </strong> | Crafted with <strong> <i
+                        class="ph ph-heart"></i> & <i class="ph ph-coffee"></i> </strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
