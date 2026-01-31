@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavHighlight();
     initScrollIndicator();
     initThemeToggle();
+    initTypingEffect();
 });
 
 /* =============================================
@@ -187,6 +188,83 @@ function initThemeToggle() {
         }
     });
     */
+}
+
+/* =============================================
+   TYPING EFFECT
+   ============================================= */
+function initTypingEffect() {
+    const titleElement = document.querySelector('.bento-title h1');
+    if (!titleElement) return;
+
+    const staticLines = ["Engineer,", "Builder,"];
+    const rotatingAdjectives = ["Problem Solver", "Fullstack dev", "Gamer"];
+
+    const rotatingSpan = titleElement.querySelector('.rotating-text');
+    let adjectiveIndex = 0;
+
+    async function startTyping() {
+        // Small delay before starting
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        const spans = titleElement.querySelectorAll('span');
+
+        // Type static lines one by one
+        for (let i = 0; i < staticLines.length; i++) {
+            spans[i].classList.add('typing-active');
+            await typeEffect(spans[i], staticLines[i]);
+            // Remove cursor from finished static line
+            spans[i].classList.remove('typing-active');
+        }
+
+        // Continuous loop for rotating adjectives
+        while (true) {
+            const currentAdjective = rotatingAdjectives[adjectiveIndex];
+            rotatingSpan.classList.add('typing-active');
+
+            await typeEffect(rotatingSpan, currentAdjective);
+
+            // Hold the word for a while
+            await new Promise(resolve => setTimeout(resolve, 2500));
+
+            // Delete the word
+            await deleteEffect(rotatingSpan);
+
+            adjectiveIndex = (adjectiveIndex + 1) % rotatingAdjectives.length;
+
+            // Small pause before typing next word
+            await new Promise(resolve => setTimeout(resolve, 500));
+        }
+    }
+
+    function typeEffect(element, text, speed = 60) {
+        return new Promise(resolve => {
+            let i = 0;
+            const interval = setInterval(() => {
+                element.textContent += text[i];
+                i++;
+                if (i === text.length) {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, speed);
+        });
+    }
+
+    function deleteEffect(element, speed = 40) {
+        return new Promise(resolve => {
+            const interval = setInterval(() => {
+                if (element.textContent.length > 0) {
+                    element.textContent = element.textContent.slice(0, -1);
+                } else {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, speed);
+        });
+    }
+
+    startTyping();
 }
 
 /* =============================================

@@ -1,0 +1,5 @@
+.DS_Store
+patch/
+patch.zip
+*.rej
+*.orig
